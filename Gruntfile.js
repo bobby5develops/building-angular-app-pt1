@@ -5,8 +5,8 @@ module.exports = function(grunt){
       compile: "Compiled:, <%= files %>",
 
       watch: {
-      	files: ["journal.txt",".js"],
-      	tasks: ["Congratulate"],
+      	files: ['app/js/main.js', 'app/css/main.css', 'index.html'],
+      	tasks: ['uglify', 'Congratulate'],
       	
       },
 
@@ -16,13 +16,31 @@ module.exports = function(grunt){
       	 		"dist/app.min.js":"app/**/*.js"
       	 	}
       	 }
-      }
+      },
+	  bower_concat: {
+		  all: {
+		    dest: 'build/_bower.js',
+		    cssDest: 'build/_bower.css',
+		    exclude: [
+		      'modernizr'
+		    ],
+		    dependencies: {
+		      'underscore': 'jquery',
+		      'backbone': 'underscore',
+		      'jquery-mousewheel': 'jquery'
+		    },
+		    bowerOptions: {
+		      relative: false
+		    }
+		}
+	  }
 	});
-    
+   
     //load plugin that provides it's task.
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-concat");
+    grunt.loadNpmTasks("grunt-bower-concat");
     require('load-grunt-tasks')(grunt);
     
     //grunt-watch this declared task.

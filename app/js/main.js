@@ -1,4 +1,4 @@
 
 function main(){
-   console.log("main.js");
+   console.log("riches");
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app>
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="ID=edge=chrome=1">
     <meta name="Software Engineer" author="Robert Yarborough">
     <meta content="">
@@ -11,24 +11,18 @@
     <link rel="stylesheet" type="text/css" href="app/css/main.css">
 </head>
 <body>
-
-<div ng-init="hello='world'">
-	<h1>{{Hello}}</h1>
+<div ng-init="tab='ONE'">
+	<h1>{{One}}</h1>
 </div>
-
 <div class="container">
 	<div class="row">
 		<tabset>
-		   <tab title="Tab1" template-url="views/tab1.html">tab1</tab>
-		   <tab title="Tab2" template-url="views/tab2.html">tab2</tab>
-		   <tab title="Tab3" template-url="views/tab3.html">tab3</tab>
+		   <tab title="Tab1" template-url="views/tab1.html"></tab>
+		   <tab title="Tab2" template-url="views/tab2.html"></tab>
+		   <tab title="Tab3" template-url="views/tab3.html"></tab>
 		</tabset>
 	</div>
 </div>
-
-
-<!-- start inline loading of javascript files -->
-<!-- end inline javascript files --> 
 
 </body>
 </html>
